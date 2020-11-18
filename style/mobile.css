@@ -1,0 +1,9 @@
+@media (max-width: 35em) {
+
+/* Göm kalender vid mobil */
+
+.calender-section {
+    display: none;
+}
+
+}

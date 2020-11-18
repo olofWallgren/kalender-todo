@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="height">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/mobile.css">
 
     <script src="./style/script.js"></script>
     <script src="./style/calender.js"></script>
@@ -12,7 +13,89 @@
 
     <title>Todo kalender</title>
 </head>
-<body>
+<body class="width height">
+    <header class="center width">
+        <!-- Titel på kalendern -->
+        <h1>Todo Kalender</h1>
+    </header>
+    <main class="flex row height">
+        <!-- Sidebar med datum och todos -->
+        <aside class="flex column">
+            <div class="aside-header">
+                <!-- Olover slänger in dagens datum etc här -->
+            </div>
+            <div class="aside-todo-container">
+                <!-- Input-fält för att användaren ska kunna lägga till todos -->
+                <input type="text" id="todoInput">
+
+                <!-- Knappen ska kopplas till en eventlistener
+                         Hämta värdet och lägg in i ett objekt -->
+                <button class="todo-btn" id="createBtn">                    
+                    Skapa Todo
+                </button>
+                
+                <!-- Här kommer de skapade todo att lägga sig 
+                     Todo kommer ha en append med de här klasserna och id -->
+
+                <!-- Todo behållaren  -->
+
+                <div class="todo-item">
+                    <div class="item-text">
+                        <p id="todoDate">Data - Datum</p>
+                        <p id="todoContent">Data - Todo</p>
+                    </div>
+                    <!-- Knappt för att ta bort -->
+                    <button class="delete-btn" id="deleteTodo">X</button>
+
+                <!-- Todo behållaren  -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Kalender sektionen -->
+        <div class="calender-section width height">
+            <div class="calender-container grid grid-calender width height">
+                <!-- Här kommer vi automatiskt skicka in datum från vår månads Array -->
+                <!-- Så de ska bort senare -->
+                <div class="calender-item">null</div>
+                <div class="calender-item">null</div>
+                <div class="calender-item">null</div>
+                <div class="calender-item">null</div>
+                <div class="calender-item">null</div>
+                <div class="calender-item">null</div>
+                <div class="calender-item">1</div>
+                <div class="calender-item">2</div>
+                <div class="calender-item">3</div>
+                <div class="calender-item">4</div>
+                <div class="calender-item">5</div>
+                <div class="calender-item">6</div>
+                <div class="calender-item">7</div>
+                <div class="calender-item">8</div>
+                <div class="calender-item">9</div>
+                <div class="calender-item">10</div>
+                <div class="calender-item">11</div>
+                <div class="calender-item">12</div>
+                <div class="calender-item">13</div>
+                <div class="calender-item">14</div>
+                <div class="calender-item">15</div>
+                <div class="calender-item">16</div>
+                <div class="calender-item">17</div>
+                <div class="calender-item">18</div>
+                <div class="calender-item">19</div>
+                <div class="calender-item">20</div>
+                <div class="calender-item">21</div>
+                <div class="calender-item">22</div>
+                <div class="calender-item">23</div>
+                <div class="calender-item">24</div>
+                <div class="calender-item">25</div>
+                <div class="calender-item">26</div>
+                <div class="calender-item">27</div>
+                <div class="calender-item">28</div>
+                <div class="calender-item">29</div>
+                <div class="calender-item">30</div>
+            </div>
+        </div>
+    </main>
     
 </body>
 </html>

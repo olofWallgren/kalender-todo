@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.width {
+    width: 100%;
+}
+
+.height {
+    height: 100%;
+}
+
+/* Flex inställningar */
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+/* Grid inställningar */
+
+.grid {
+    display: grid;
+}
+
+.grid-calender {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+/* Andra standarder */
+
+h1 {
+    text-align: center;
+}
+
+/* Header */
+
+header {
+    height: 5rem;
+}
+
+
+/* Main */
+
+/* Sidebar */
+
+/* Todo item */
+/* De här 3 klasserna ska lägga till när vi appendar våra todos */
+
+/* Containern för en todo */
+.todo-item {
+    display: flex;
+    flex-direction: row;   
+
+    border: .5px lightgrey solid;
+}
+
+/* Todo text containern */
+.item-text {
+    flex: 5;
+}
+
+/* Todo btn containern */
+.delete-btn {
+    flex: 1;
+}
+
+
+
+/* Calender */
+.calender-item {
+    width: 100%;
+    height: 100%;
+
+    border: 1px lightslategray solid;
+    
+}
