@@ -15,7 +15,7 @@ function startTime() {
     weekdayHolder.innerText = getWeekday(date);
 
     const monthHolder = document.getElementById('date');
-    monthHolder.innerText = getMonth(date);
+    monthHolder.innerText = getDate(date) + ' ' + date.getFullYear();
 }
 
 function checkTime(i) {
@@ -27,6 +27,7 @@ function checkTime(i) {
 
 function getWeekday(date) {
     const weekdayIndex =  date.getDay();
+
     switch(weekdayIndex) {
         case 0: return 'Söndag';
         case 1: return 'Måndag';
@@ -38,7 +39,7 @@ function getWeekday(date) {
     }
 }
 
-function getMonth(date) {
+function getDate(date) {
     const dayOfMonth = date.getDate();
     const monthIndex = date.getMonth();
 
