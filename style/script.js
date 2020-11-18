@@ -2,9 +2,9 @@ window.addEventListener('load',startProgram);
 function startProgram(){
     addEventListeners()
 }
-addEventListeners(){
-    
-}
+function addEventListeners() {
+
+};
 
 const daysOfMonth = [ 
     null,
