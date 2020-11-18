@@ -5,18 +5,16 @@ function startTime() {
     
     let h = date.getHours();
     let m = date.getMinutes();
-    let s = date.getSeconds();
     
     m = checkTime(m);
-    s = checkTime(s);
     
-    document.getElementById('time').innerHTML = h + ':' + m + ':' + s;
-    const t = setTimeout(startTime, 500);
+    document.getElementById('time').innerHTML = h + ':' + m;
+    const t = setTimeout(startTime, 1000);
 
     const weekdayHolder = document.getElementById('weekday');
     weekdayHolder.innerText = getWeekday(date);
 
-    const monthHolder = document.getElementById('month');
+    const monthHolder = document.getElementById('date');
     monthHolder.innerText = getMonth(date);
 }
 
