@@ -6,6 +6,17 @@ function addEventListeners() {
 
 };
 
+// global variables
+const todoContainer = document.querySelector('#todoContainer');
+const createBtn = document.querySelector('#createBtn');
+const userInputValue = document.querySelector('#todoInput');
+
+
+// Eventlisteners
+createBtn.addEventListener('click', addTodo);
+
+
+// Array for dates in month
 const daysOfMonth = [ 
     null,
     null,
@@ -44,3 +55,27 @@ const daysOfMonth = [
     29,
     30,
     ];
+
+// Function to append a new todo to the sidebar
+function addTodo() {
+
+    // Create the container of the todo
+    const todoItem = document.createElement('div');
+    todoItem.classList.add('todo-item');
+
+    const todoContent = document.createElement('p');
+    todoContent.classList.add('item-text');
+    todoContent.innerText = userInputValue.value;
+    todoItem.appendChild(todoContent)
+
+    const todoDeleteBtn = document.createElement('button');
+    todoDeleteBtn.innerText = 'X';
+    todoDeleteBtn.classList.add('delete-btn');
+    todoItem.appendChild(todoDeleteBtn)
+
+    todoContainer.appendChild(todoItem);
+
+    userInputValue.value = "";
+
+    console.log(userInputValue.value)
+}
