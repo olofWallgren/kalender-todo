@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
 .width {
     width: 100%;
 }
@@ -11,6 +17,8 @@
 .height {
     height: 100%;
 }
+
+
 
 /* Flex inställningar */
 .flex {
@@ -30,6 +38,8 @@
     flex-direction: row;
 }
 
+
+
 /* Grid inställningar */
 
 .grid {
@@ -40,11 +50,12 @@
     grid-template-columns: repeat(7, 1fr);
 }
 
+
+
 /* Andra standarder */
 
 h1 {
     text-align: center;
-    font-family: 'Poppins', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Header */
@@ -87,5 +98,11 @@ header {
     height: 100%;
 
     border: 1px lightslategray solid;
-    
+    padding: .5rem;
+}
+
+.weekday {
+    border: 1px solid lightslategray;
+    font-weight: 700;
+    background-color: lightgreen;
 }
