@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/mobile.css">
 
-    <script src="./style/script.js"></script>
-    <script src="./style/calender.js"></script>
-    <script src="./style/todos.js"></script>
+    <script defer src="./style/script.js"></script>
 
     <title>Todo kalender</title>
 </head>
@@ -21,16 +19,27 @@
     <main class="flex row height">
         <!-- Sidebar med datum och todos -->
         <aside class="flex column">
+
             <div class="aside-header flex column center">
-                <!-- Olover slänger in dagens datum etc här -->
-                <h2 id="weekday">Måndag</h2>
-                <p id="time">12.30</p>
-                <p id="date">4 maj 2077</p>                
+                <h2 id="weekday"></h2>
+                <p id="time"></p>
+                <p id="date"></p>                
             </div>
+<<<<<<< HEAD
             
+=======
+
+
+>>>>>>> 1e9fd6948e11aa99fcfff64881d9bf888900e447
             <div class="aside-todo-container">
+
+            <div class="aside-todo-container" id="todoContainer">
+
                 <!-- Input-fält för att användaren ska kunna lägga till todos -->
-                <input type="text" id="todoInput">
+                <input type="text" id="todoInput" placeholder="Fyll i här">
+
+                <!-- Select för att bestämma vilket datum man ska göra todon -->
+                
 
                 <!-- Knappen ska kopplas till en eventlistener
                          Hämta värdet och lägg in i ett objekt -->
@@ -43,13 +52,7 @@
 
                 <!-- Todo behållaren  -->
 
-                <div class="todo-item">
-                    <div class="item-text">
-                        <p id="todoDate">Data - Datum</p>
-                        <p id="todoContent">Data - Todo</p>
-                    </div>
-                    <!-- Knappt för att ta bort -->
-                    <button class="delete-btn" id="deleteTodo">X</button>
+                <!-- Lägg till via javascript -->
 
                 <!-- Todo behållaren  -->
                 </div>
