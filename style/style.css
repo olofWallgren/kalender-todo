@@ -1,3 +1,9 @@
+:root {
+    --clr-bg: rgb(255, 57, 57);
+    --clr-aside: rgb(238, 238, 238);
+    --clr-calendar: white;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +12,7 @@
 
 body {
     font-family: 'Poppins', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: var(--clr-bg);
 }
 
 
@@ -44,6 +51,7 @@ body {
 
 .grid {
     display: grid;
+    /* gap: .25rem; */
 }
 
 .grid-calender {
@@ -56,6 +64,7 @@ body {
 
 h1 {
     text-align: center;
+    margin: 0;
 }
 
 /* Header */
@@ -68,6 +77,32 @@ header {
 /* Main */
 
 /* Sidebar */
+
+aside {
+    border: 2px solid rgb(255, 255, 255);
+    margin: 0 .5rem;
+    padding: 0.5rem 0;
+    background-color: var(--clr-aside);
+    color: black;
+}
+
+aside h4 {
+    margin-top: 1rem;
+}
+
+#weekday {
+    font-size: 2.25rem;
+}
+
+#date {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.idag-text {
+    color: var(--clr-bg);
+    font-weight: 600;
+}
 
 /* Todo item */
 /* De här 3 klasserna ska lägga till när vi appendar våra todos */
@@ -90,6 +125,32 @@ header {
     flex: 1;
 }
 
+.todo-btn, #todoInput, aside h4, .aside-header {
+    margin-left: .5rem;
+}
+
+.todo-btn {
+    margin-top: 0.5rem;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: .25rem .5rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.todo-btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+#todoInput {
+    margin-top: 1rem;
+    padding: .5rem;
+    border: 2px solid black;
+    border-radius: 0;
+}
+
 
 
 /* Calender */
@@ -97,12 +158,26 @@ header {
     width: 100%;
     height: 100%;
 
-    border: 1px lightslategray solid;
+    border: 1px rgb(230, 230, 230) solid;
     padding: .5rem;
+    background-color: var(--clr-calendar);
+    color: black;
+}
+
+.calender-item span {
+    /* background-color: var(--clr-bg); */
+    padding: 0.25rem 0.75rem;
+    border-radius: 100rem;
+    color: black;
+    float: right;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .weekday {
-    border: 1px solid lightslategray;
-    font-weight: 700;
-    background-color: lightgreen;
+    border-bottom: 1px solid lightslategray;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: flex-end;
 }
