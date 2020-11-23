@@ -1,8 +1,7 @@
-window.addEventListener('load',startProgram);
+
 let dateArray = [];
 function startProgram(){
-    createArray()
-    addEmptyDates()
+    
 }
    
    // skapar en array fr varje datum i november

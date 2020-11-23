@@ -2,6 +2,8 @@ window.addEventListener('load',startProgram);
 function startProgram(){
     addEventListeners()
     startTime()
+    createArray()
+    addEmptyDates()
 }
 function addEventListeners() {
 
