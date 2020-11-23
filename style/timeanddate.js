@@ -1,5 +1,3 @@
-window.onload = startTime;
-
 function startTime() {
     const date = new Date();
     
