@@ -136,24 +136,26 @@ aside h4 {
 
 .todo-btn {
     margin-top: 0.5rem;
-    background-color: white;
-    color: black;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border: 2px solid black;
     padding: .25rem .5rem;
     cursor: pointer;
     transition: all 300ms ease-in-out;
+    border-radius: 5px;
 }
 
 .todo-btn:hover {
-    background-color: transparent;
+    background-color: var(--clr-bg);
     color: white;
+    border: var(--clr-bg) 2px solid;
 }
 
 #todoInput {
     margin-top: 1rem;
     padding: .5rem;
     border: 2px solid black;
-    border-radius: 0;
+    border-radius: 5px;
 }
 
 
@@ -187,6 +189,10 @@ aside h4 {
 
 .calender-item .null {
     color: rgb(175, 175, 175);
+}
+
+.calender-item .red-day {
+    color: var(--clr-bg);
 }
 
 .weekday {
