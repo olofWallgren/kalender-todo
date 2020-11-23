@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/mobile.css">
 
-    <script src="./style/script.js"></script>
+    
     <script src="./style/calender.js"></script>
     <script src="./style/todos.js"></script>
     <script src="./style/timeanddate.js"></script>
@@ -34,25 +34,27 @@
             <div class="aside-todo-container">
 
 
-            <div class="aside-todo-container" id="todoContainer">
+            <div class="aside-todo-container flex column" id="todoContainer">
                 <!-- Input-fält för att användaren ska kunna lägga till todos -->
                 <input type="text" id="todoInput" placeholder="Fyll i här">
 
                 <!-- Select för att bestämma vilket datum man ska göra todon -->
-                
+                <input type="date" name="todoDate" id="todoDate">             
 
                 <!-- Knappen ska kopplas till en eventlistener
                          Hämta värdet och lägg in i ett objekt -->
-                <button class="todo-btn" id="createBtn">                    
+                <div class="todo-btn" id="createBtn">                    
                     Skapa Todo
-                </button>
-                
+                </div>
+                <div class="todo-list" id="todoList">
+
                 <!-- Här kommer de skapade todo att lägga sig 
                      Todo kommer ha en append med de här klasserna och id -->
 
                 <!-- Todo behållaren  -->
 
                 <!-- Lägg till via javascript -->
+                </div>
 
                 <!-- Todo behållaren  -->
                 </div>

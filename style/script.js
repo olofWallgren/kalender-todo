@@ -1,19 +1,23 @@
 window.addEventListener('load',startProgram);
 function startProgram(){
     addEventListeners()
+    startTime()
 }
 function addEventListeners() {
 
 };
 
 // global variables
-const todoContainer = document.querySelector('#todoContainer');
+
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
+const todoDate = document.querySelector('#todoDate');
+
+console.log(todoDate.value)
 
 
 // Eventlisteners
-createBtn.addEventListener('click', addTodo);
+createBtn.addEventListener('click', pushTodoArray);
 
 
 // Array for dates in month
@@ -56,26 +60,48 @@ const daysOfMonth = [
     30,
     ];
 
-// Function to append a new todo to the sidebar
-function addTodo() {
 
-    // Create the container of the todo
-    const todoItem = document.createElement('div');
-    todoItem.classList.add('todo-item');
+let todoArray = [];
 
-    const todoContent = document.createElement('p');
-    todoContent.classList.add('item-text');
-    todoContent.innerText = userInputValue.value;
-    todoItem.appendChild(todoContent)
+console.log(todoArray)
 
-    const todoDeleteBtn = document.createElement('button');
-    todoDeleteBtn.innerText = 'X';
-    todoDeleteBtn.classList.add('delete-btn');
-    todoItem.appendChild(todoDeleteBtn)
+function pushTodoArray() {
+    
+    todoArray.push({todo:userInputValue.value, date:todoDate.value})
 
-    todoContainer.appendChild(todoItem);
+    printTodos()
+}
 
-    userInputValue.value = "";
+function printTodos() {
 
-    console.log(userInputValue.value)
+    todoList.innerHTML = "";
+
+    for (let i = 0; i < todoArray.length; i++) {
+
+        const todoList = document.querySelector('#todoList');
+
+        const todoDeleteBtn = document.createElement('button');               
+
+        // Create the container of the todo
+        const todoItem = document.createElement('div');
+        todoItem.classList.add('todo-item');
+
+        const todoContent = document.createElement('p');
+        todoContent.classList.add('item-text');
+        todoItem.appendChild(todoContent)
+
+        todoContent.innerText = userInputValue.value;
+        todoDeleteBtn.classList.add('delete-btn');
+        todoDeleteBtn.innerText = 'X';
+        todoItem.appendChild(todoDeleteBtn)
+
+        todoDeleteBtn.addEventListener('click', () => {
+            todoArray.splice(i,1);
+            printTodos();
+        })        
+
+        todoList.appendChild(todoItem);
+
+        userInputValue.value = "";
+    }
 }
