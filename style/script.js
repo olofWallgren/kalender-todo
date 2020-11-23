@@ -5,6 +5,7 @@ function startProgram(){
 }
 function addEventListeners() {
     populateTodoArray()
+    deleteTodoLS()   
 
 };
 
@@ -96,6 +97,7 @@ function printTodos() {
 
         todoDeleteBtn.addEventListener('click', () => {
             todoArray.splice(i,1);
+            // deleteTodoLS('todoData')
             printTodos();
         })
 
@@ -133,35 +135,26 @@ function saveTodoToLS() {
 
 function populateTodoArray() {
 
+    if (localStorage.getItem('todo') === null) {
+
+    }
+    else {
     let todoBack = JSON.parse(localStorage.getItem('todo'))
     todoArray = todoBack;
     console.log(todoBack)
 
     printTodos();
-    // console.log(todoBack)
-
+    }
 }
 
-// Function to append a new todo to the sidebar
-// function addTodo() {
+function deleteTodoLS() {
 
-//     // Create the container of the todo
-//     const todoItem = document.createElement('div');
-//     todoItem.classList.add('todo-item');
+    for (i = 0; i < localStorage.length; i++) {
+        x = localStorage.key(i)
 
-//     const todoContent = document.createElement('p');
-//     todoContent.classList.add('item-text');
-//     todoContent.innerText = userInputValue.value;
-//     todoItem.appendChild(todoContent)
+        console.log(i)
+    }
+    
+    
 
-//     const todoDeleteBtn = document.createElement('button');
-//     todoDeleteBtn.innerText = 'X';
-//     todoDeleteBtn.classList.add('delete-btn');
-//     todoItem.appendChild(todoDeleteBtn)
-
-//     todoContainer.appendChild(todoItem);
-
-//     userInputValue.value = "";
-
-//     console.log(userInputValue.value)
-// }
+}
