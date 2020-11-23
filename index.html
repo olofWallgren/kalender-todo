@@ -6,6 +6,13 @@
 
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/mobile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <script defer src="./style/script.js"></script>
+    <script src=https://kit.fontawesome.com/369fccfd9c.js crossorigin="anonymous"></script>
+
 
     <script src="./style/script.js"></script>
     <script src="./style/calender.js"></script>
@@ -16,26 +23,31 @@
 
     <title>Todo kalender</title>
 </head>
+
 <body class="width height">
+
     <header class="center width">
         <!-- Titel på kalendern -->
-        <h1>Todo Kalender</h1>
+        <h1 class="flex center height">Todo Kalender</h1>
     </header>
+
     <main class="flex row height">
+
         <!-- Sidebar med datum och todos -->
         <aside class="flex column">
-            <div class="aside-header flex column center">
-                <!-- Olover slänger in dagens datum etc här -->
-                <h2 id="weekday">Måndag</h2>
-                <p id="time">12.30</p>
-                <p id="date">4 maj 2077</p>                
+
+            <div class="aside-header flex column">
+                <p class="idag-text">IDAG</p>
+                <h2 id="weekday"></h2>
+                <p id="date"></p>
+                <p id="time"></p>    
             </div>
 
             <div class="aside-todo-container">
 
-
             <div class="aside-todo-container" id="todoContainer">
                 <!-- Input-fält för att användaren ska kunna lägga till todos -->
+
                 <input type="text" id="todoInput" placeholder="Fyll i här">
 
                 <!-- Select för att bestämma vilket datum man ska göra todon -->
@@ -64,42 +76,49 @@
             <div class="calender-container grid grid-calender width height">
                 <!-- Här kommer vi automatiskt skicka in datum från vår månads Array -->
                 <!-- Så de ska bort senare -->
-                <div class="calender-item">null</div>
-                <div class="calender-item">null</div>
-                <div class="calender-item">null</div>
-                <div class="calender-item">null</div>
-                <div class="calender-item">null</div>
-                <div class="calender-item">null</div>
-                <div class="calender-item">1</div>
-                <div class="calender-item">2</div>
-                <div class="calender-item">3</div>
-                <div class="calender-item">4</div>
-                <div class="calender-item">5</div>
-                <div class="calender-item">6</div>
-                <div class="calender-item">7</div>
-                <div class="calender-item">8</div>
-                <div class="calender-item">9</div>
-                <div class="calender-item">10</div>
-                <div class="calender-item">11</div>
-                <div class="calender-item">12</div>
-                <div class="calender-item">13</div>
-                <div class="calender-item">14</div>
-                <div class="calender-item">15</div>
-                <div class="calender-item">16</div>
-                <div class="calender-item">17</div>
-                <div class="calender-item">18</div>
-                <div class="calender-item">19</div>
-                <div class="calender-item">20</div>
-                <div class="calender-item">21</div>
-                <div class="calender-item">22</div>
-                <div class="calender-item">23</div>
-                <div class="calender-item">24</div>
-                <div class="calender-item">25</div>
-                <div class="calender-item">26</div>
-                <div class="calender-item">27</div>
-                <div class="calender-item">28</div>
-                <div class="calender-item">29</div>
-                <div class="calender-item">30</div>
+                <div class="weekday flex">Måndag</div>
+                <div class="weekday flex">Tisdag</div>
+                <div class="weekday flex">Onsdag</div>
+                <div class="weekday flex">Torsdag</div>
+                <div class="weekday flex">Fredag</div>
+                <div class="weekday flex">Lördag</div>
+                <div class="weekday flex">Söndag</div>
+                <div class="calender-item"><span class="null">26</span></div>
+                <div class="calender-item"><span class="null">27</span></div>
+                <div class="calender-item"><span class="null">28</span></div>
+                <div class="calender-item"><span class="null">29</span></div>
+                <div class="calender-item"><span class="null">30</span></div>
+                <div class="calender-item"><span class="null">31</span></div>
+                <div class="calender-item"><span class="red-day">1</span></div>
+                <div class="calender-item"><span>2</span></div>
+                <div class="calender-item"><span>3</span></div>
+                <div class="calender-item"><span>4</span></div>
+                <div class="calender-item"><span>5</span></div>
+                <div class="calender-item"><span>6</span></div>
+                <div class="calender-item"><span>7</span></div>
+                <div class="calender-item"><span class="red-day">8</span></div>
+                <div class="calender-item"><span>9</span></div>
+                <div class="calender-item"><span>10</span></div>
+                <div class="calender-item"><span>11</span></div>
+                <div class="calender-item"><span>12</span></div>
+                <div class="calender-item"><span>13</span></div>
+                <div class="calender-item"><span>14</span></div>
+                <div class="calender-item"><span class="red-day">15</span></div>
+                <div class="calender-item"><span>16</span></div>
+                <div class="calender-item"><span>17</span></div>
+                <div class="calender-item"><span>18</span></div>
+                <div class="calender-item"><span>19</span></div>
+                <div class="calender-item"><span>20</span></div>
+                <div class="calender-item"><span>21</span></div>
+                <div class="calender-item"><span class="red-day">22</span></div>
+                <div class="calender-item"><span>23</span></div>
+                <div class="calender-item"><span>24</span></div>
+                <div class="calender-item"><span>25</span></div>
+                <div class="calender-item"><span>26</span></div>
+                <div class="calender-item"><span>27</span></div>
+                <div class="calender-item"><span>28</span></div>
+                <div class="calender-item"><span class="red-day">29</span></div>
+                <div class="calender-item"><span>30</span></div>
             </div>
         </div>
     </main>
