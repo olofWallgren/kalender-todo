@@ -4,6 +4,7 @@ function startProgram(){
     startTime()
 }
 function addEventListeners() {
+    populateTodoArray()
 
 };
 
@@ -71,6 +72,7 @@ let todoArray = [];
 function pushTodoArray() {
     
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
+    saveTodoToLS()
 
     printTodos()
 }
@@ -119,6 +121,26 @@ function printTodos() {
     }
 }
 
+// Save to local storage
+
+function saveTodoToLS() {
+
+    let todoToString = JSON.stringify(todoArray)
+    // console.log(todoToString)
+
+    localStorage.setItem('todo', todoToString)         
+}
+
+function populateTodoArray() {
+
+    let todoBack = JSON.parse(localStorage.getItem('todo'))
+    todoArray = todoBack;
+    console.log(todoBack)
+
+    printTodos();
+    // console.log(todoBack)
+
+}
 
 // Function to append a new todo to the sidebar
 // function addTodo() {
