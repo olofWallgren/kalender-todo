@@ -4,7 +4,6 @@ function startProgram(){
     startTime()
 }
 function addEventListeners() {
-    populateTodoArray()
 
 };
 
@@ -14,7 +13,7 @@ const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
 
-// console.log(todoDate.value)
+console.log(todoDate.value)
 
 
 // Eventlisteners
@@ -74,7 +73,6 @@ function pushTodoArray() {
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
 
     printTodos()
-    saveTodoToLS()
 }
 
 /** This function prints the todos on screen, when removed from array it also removes from screen */
@@ -119,26 +117,29 @@ function printTodos() {
         // Erease old userinput todo
         userInputValue.value = "";
     }
-    console.log(todoArray)
 }
 
-// Save to local storage
 
-function saveTodoToLS() {
+// Function to append a new todo to the sidebar
+// function addTodo() {
 
-    let todoToString = JSON.stringify(todoArray)
-    // console.log(todoToString)
+//     // Create the container of the todo
+//     const todoItem = document.createElement('div');
+//     todoItem.classList.add('todo-item');
 
-    localStorage.setItem('todo', todoToString)         
-}
+//     const todoContent = document.createElement('p');
+//     todoContent.classList.add('item-text');
+//     todoContent.innerText = userInputValue.value;
+//     todoItem.appendChild(todoContent)
 
-function populateTodoArray() {
+//     const todoDeleteBtn = document.createElement('button');
+//     todoDeleteBtn.innerText = 'X';
+//     todoDeleteBtn.classList.add('delete-btn');
+//     todoItem.appendChild(todoDeleteBtn)
 
-    let todoBack = JSON.parse(localStorage.getItem('todo'))
-    todoArray = todoBack;
-    console.log(todoBack)
+//     todoContainer.appendChild(todoItem);
 
-    printTodos();
-    // console.log(todoBack)
+//     userInputValue.value = "";
 
-}
+//     console.log(userInputValue.value)
+// }
