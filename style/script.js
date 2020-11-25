@@ -97,7 +97,7 @@ function printTodos() {
 
         todoDeleteBtn.addEventListener('click', () => {
             todoArray.splice(i,1);
-            // deleteTodoLS('todoData')
+            deleteTodoLS(todoData)
             printTodos();
         })
 
@@ -147,14 +147,14 @@ function populateTodoArray() {
     }
 }
 
+/** Function to remove one todo from local storage and populate it with the rest of todoArray */
 function deleteTodoLS() {
 
-    for (i = 0; i < localStorage.length; i++) {
-        x = localStorage.key(i)
+    // Clean the local storage
+    localStorage.clear();
 
-        console.log(i)
+    // A loop to send every todo from the todoArray to local storage
+    for ( i = 0; i < todoArray.length; i++) {
+        saveTodoToLS()
     }
-    
-    
-
 }
