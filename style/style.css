@@ -78,14 +78,14 @@ header {
 /* Main */
 
 main {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 /* Sidebar */
 
 aside {
     margin: 0 .5rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem .5rem;
     background-color: var(--clr-aside);
     color: black;
     border-radius: 8px;
@@ -130,9 +130,11 @@ aside h4 {
     flex: 1;
 }
 
-.todo-btn, #todoInput, aside h4, .aside-header {
+/* .todo-btn, #todoInput, aside h4, .aside-header {
     margin-left: .6rem;
-}
+} */
+
+
 
 .todo-btn {
     margin-top: 0.5rem;
@@ -143,6 +145,7 @@ aside h4 {
     cursor: pointer;
     transition: all 300ms ease-in-out;
     border-radius: 5px;
+    text-align: center;
 }
 
 .todo-btn:hover {
@@ -158,6 +161,18 @@ aside h4 {
     border-radius: 5px;
 }
 
+#todoDate {
+    margin-top: .25rem;
+    border: 2px solid black;
+    padding: .4rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.choose-date-text {
+    margin-top: 0.5rem;
+    font-size: .9rem;
+}
 
 
 /* Calender */
@@ -165,6 +180,7 @@ aside h4 {
 .calender-section {
     border-radius: 8px;
     overflow: hidden;
+    margin-right: .5rem;
 }
 
 .calender-item {
@@ -197,8 +213,8 @@ aside h4 {
 
 .weekday {
     font-weight: 400;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--clr-calendar);
     align-items: center;
-    /* justify-content: flex-end; */
     justify-content: center;
+    height: 2.5rem;
 }
