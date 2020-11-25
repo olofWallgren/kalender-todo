@@ -71,8 +71,11 @@ let todoArray = [];
 
 let todoDates = [];
 
+// TODO: OLOF denna tabellen
 let countTodos = [];
 
+
+// TODO: Olof denna funktionen tar ut datumen i antal
 function countTodoDates() {
 
     for (let i = 0; i < todoArray.length; i++) {
@@ -82,36 +85,32 @@ function countTodoDates() {
     todoArray.sort();
 
     let current = null;
-    let count = 0;
+    let number = 0;
 
     for (let i = 0; i < todoDates.length; i++) {
         if(todoDates[i] != current) {
-            if (count > 0) {
-            countTodos.push({date:current, count:count})
-        
+            if (number > 0) {
+            countTodos.push({date:current, count:number})
+            }
         current = todoDates[i];
-        count = 1;
-        }
+        number = 1;
     }
     else {
-        count++;
+        number++;
     }
-    if (count > 0) {
-        countTodos.push({date:current, count:count})
+    if (number > 0) {
+        countTodos.push({date:current, count:number})
     }
 }
 }
-
 
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
 
     
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
-
-
     
-
+    countTodoDates()
 
     console.log(todoDates)
     console.log(countTodos)
@@ -188,10 +187,6 @@ function addTodoToDate(todo){
     dateDiv.appendChild(node);
 }
 
-//TODO: testar lite
-for (let i = 0; i < todoArray.length; i++) {
-    todoDates.push(todoArray[i].date)
-}
 
 
  
