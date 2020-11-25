@@ -14,7 +14,7 @@ function addEventListeners() {
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
-
+const divDate = 
 console.log(todoDate.value)
 
 
@@ -86,6 +86,7 @@ function printTodos() {
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {
 
+        addTodoToDate( todoArray[i])
         // Creates an varible to the array for use on the created paragraph
         const todoData = todoArray[i];
 
@@ -119,7 +120,35 @@ function printTodos() {
         // Erease old userinput todo
         userInputValue.value = "";
     }
+  
+   
+
+   
+   
+    // let item = dateArray.find(item => item.date == todoArray.date);
+    // let test = document.getElementById(item.index);
+    // console.log(test)
 }
+function addTodoToDate(todo){
+    console.log(dateArray)
+    
+    let dateItem = dateArray.filter(function(item) {
+        return item.dateString == todo.date;
+      });
+    
+    console.log(dateItem[0])
+    let dateDiv = document.getElementById(dateItem[0].index)
+    let node = document.createElement("p");
+    node.innerText = todo.todo
+    dateDiv.appendChild(node);
+}
+
+
+ 
+ 
+    
+    // 
+        
 
 
 // Function to append a new todo to the sidebar
