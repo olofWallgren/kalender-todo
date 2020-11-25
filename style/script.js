@@ -6,6 +6,8 @@ function startProgram(){
     addEmptyDates()
 }
 function addEventListeners() {
+    populateTodoArray()
+    deleteTodoLS()   
 
 };
 
@@ -73,6 +75,7 @@ let todoArray = [];
 function pushTodoArray() {
     
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
+    saveTodoToLS()
 
     printTodos()
 }
@@ -96,6 +99,7 @@ function printTodos() {
 
         todoDeleteBtn.addEventListener('click', () => {
             todoArray.splice(i,1);
+            deleteTodoLS(todoData)
             printTodos();
         })
 
@@ -121,27 +125,38 @@ function printTodos() {
     }
 }
 
+// Save to local storage
 
-// Function to append a new todo to the sidebar
-// function addTodo() {
+function saveTodoToLS() {
 
-//     // Create the container of the todo
-//     const todoItem = document.createElement('div');
-//     todoItem.classList.add('todo-item');
+    let todoToString = JSON.stringify(todoArray)
+    // console.log(todoToString)
 
-//     const todoContent = document.createElement('p');
-//     todoContent.classList.add('item-text');
-//     todoContent.innerText = userInputValue.value;
-//     todoItem.appendChild(todoContent)
+    localStorage.setItem('todo', todoToString)         
+}
 
-//     const todoDeleteBtn = document.createElement('button');
-//     todoDeleteBtn.innerText = 'X';
-//     todoDeleteBtn.classList.add('delete-btn');
-//     todoItem.appendChild(todoDeleteBtn)
+function populateTodoArray() {
 
-//     todoContainer.appendChild(todoItem);
+    if (localStorage.getItem('todo') === null) {
 
-//     userInputValue.value = "";
+    }
+    else {
+    let todoBack = JSON.parse(localStorage.getItem('todo'))
+    todoArray = todoBack;
+    console.log(todoBack)
 
-//     console.log(userInputValue.value)
-// }
+    printTodos();
+    }
+}
+
+/** Function to remove one todo from local storage and populate it with the rest of todoArray */
+function deleteTodoLS() {
+
+    // Clean the local storage
+    localStorage.clear();
+
+    // A loop to send every todo from the todoArray to local storage
+    for ( i = 0; i < todoArray.length; i++) {
+        saveTodoToLS()
+    }
+}
