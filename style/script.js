@@ -14,8 +14,8 @@ function addEventListeners() {
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
-const divDate = 
-console.log(todoDate.value)
+const removeTodoCalender = document.querySelectorAll('.remove-me');
+
 
 
 // Eventlisteners
@@ -77,6 +77,7 @@ let countTodos = [];
 
 // TODO: Olof denna funktionen tar ut datumen i antal
 function countTodoDates() {
+    
 
     for (let i = 0; i < todoArray.length; i++) {
         todoDates.push(todoArray[i].date)
@@ -104,18 +105,22 @@ function countTodoDates() {
 }
 }
 
+// function updateCalender() {
+//     removeTodoCalender.forEach(e => {
+//         e.parentNode.removeChild(removeTodoCalender);        
+//     });
+// }
+
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
-
     
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
-    
+    todoDates = []
     countTodoDates()
+    printTodos()
 
     console.log(todoDates)
     console.log(countTodos)
-
-    printTodos()
 }
 
 /** This function prints the todos on screen, when removed from array it also removes from screen */
@@ -124,11 +129,17 @@ function printTodos() {
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
 
-    countTodoDates()
+
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {
 
-        addTodoToDate( todoArray[i])
+        // TODO: Denna loopen lägger till i calendern
+        // TODO: Men blir dubbletter etc.
+        for (let i = 0; i < countTodos.length; i++) {
+            addTodoToDate(countTodos[i])
+        }
+
+        
         // Creates an varible to the array for use on the created paragraph
         const todoData = todoArray[i];
 
@@ -161,8 +172,6 @@ function printTodos() {
 
         // Erease old userinput todo
         userInputValue.value = "";
-
-
     }
   
    
@@ -173,17 +182,19 @@ function printTodos() {
     // let test = document.getElementById(item.index);
     // console.log(test)
 }
-function addTodoToDate(todo){
-    console.log(dateArray)
+
+
+// TODO: Funktion för att skapa todo på kalender
+function addTodoToDate(todo){    
     
     let dateItem = dateArray.filter(function(item) {
         return item.dateString == todo.date;
       });
     
-    console.log(dateItem[0])
     let dateDiv = document.getElementById(dateItem[0].index)
     let node = document.createElement("p");
-    node.innerText = todo.todo
+    node.classList.add('remove-me');
+    node.innerText = todo.count
     dateDiv.appendChild(node);
 }
 
