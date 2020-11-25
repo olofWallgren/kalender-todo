@@ -69,10 +69,52 @@ const daysOfMonth = [
  */
 let todoArray = [];
 
+let todoDates = [];
+
+let countTodos = [];
+
+function countTodoDates() {
+
+    for (let i = 0; i < todoArray.length; i++) {
+        todoDates.push(todoArray[i].date)
+    }
+
+    todoArray.sort();
+
+    let current = null;
+    let count = 0;
+
+    for (let i = 0; i < todoDates.length; i++) {
+        if(todoDates[i] != current) {
+            if (count > 0) {
+            countTodos.push({date:current, count:count})
+        
+        current = todoDates[i];
+        count = 1;
+        }
+    }
+    else {
+        count++;
+    }
+    if (count > 0) {
+        countTodos.push({date:current, count:count})
+    }
+}
+}
+
+
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
+
     
     todoArray.push({todo:userInputValue.value, date:todoDate.value})
+
+
+    
+
+
+    console.log(todoDates)
+    console.log(countTodos)
 
     printTodos()
 }
@@ -83,6 +125,7 @@ function printTodos() {
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
 
+    countTodoDates()
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {
 
@@ -119,6 +162,8 @@ function printTodos() {
 
         // Erease old userinput todo
         userInputValue.value = "";
+
+
     }
   
    
@@ -141,6 +186,11 @@ function addTodoToDate(todo){
     let node = document.createElement("p");
     node.innerText = todo.todo
     dateDiv.appendChild(node);
+}
+
+//TODO: testar lite
+for (let i = 0; i < todoArray.length; i++) {
+    todoDates.push(todoArray[i].date)
 }
 
 
