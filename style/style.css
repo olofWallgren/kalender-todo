@@ -51,7 +51,6 @@ body {
 
 .grid {
     display: grid;
-    /* gap: .25rem; */
 }
 
 .grid-calender {
