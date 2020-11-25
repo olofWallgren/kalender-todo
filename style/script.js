@@ -113,7 +113,7 @@ function printTodos() {
         todoItem.appendChild(todoContent)
 
         // Creates the button
-        todoDeleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+        todoDeleteBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
         todoItem.appendChild(todoDeleteBtn)
         todoDeleteBtn.classList.add('delete-btn');
 

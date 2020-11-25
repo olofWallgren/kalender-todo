@@ -183,15 +183,24 @@ aside h4 {
 
 .todo-item {
     border: none;
+    margin-bottom: .5rem;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .delete-btn {
     border: none;
     background-color: var(--clr-bg);
-    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out 0s;
 }
 
-.fa-times {
+.delete-btn:hover {
+    background-color: black;
+}
+
+.fa-times-circle {
     color: var(--clr-calendar);
 }
 
