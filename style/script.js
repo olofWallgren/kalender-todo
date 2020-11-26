@@ -1,5 +1,5 @@
-window.addEventListener('load',startProgram);
-function startProgram(){
+window.addEventListener('load', startProgram);
+function startProgram() {
     addEventListeners()
     startTime()
     createArray()
@@ -35,40 +35,40 @@ let todoArray = [];
 
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
-    
-    todoArray.push({todo:userInputValue.value, date:todoDate.value})
+
+    todoArray.push({ todo: userInputValue.value, date: todoDate.value })
 
     printTodos()
-   
+
 }
 
 /** This function prints the todos on screen, when removed from array it also removes from screen */
 function printTodos() {
-   
-   
-    
+
+
+
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
     clearTodoText()
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {
-        
-        addTodoToDate( todoArray[i])
-       
+
+        addTodoToDate(todoArray[i])
+
         // Creates an varible to the array for use on the created paragraph
         const todoData = todoArray[i];
 
         const todoList = document.querySelector('#todoList');
 
-        const todoDeleteBtn = document.createElement('button');        
+        const todoDeleteBtn = document.createElement('button');
         const todoContent = document.createElement('p');
 
         todoDeleteBtn.addEventListener('click', () => {
-            todoArray.splice(i,1);
-           
+            todoArray.splice(i, 1);
+
             printTodos();
         })
-        
+
         // Creates the container of the todo
         const todoItem = document.createElement('div');
         todoItem.classList.add('todo-item');
@@ -88,49 +88,50 @@ function printTodos() {
 
         // Erease old userinput todo
         userInputValue.value = "";
-        
+
     }
-  
-    
+
+
 }
-function addTodoToDate(todo){
-    let dateItem = dateArray.filter(item=> {
+function addTodoToDate(todo) {
+    let dateItem = dateArray.filter(item => {
         return item.dateString == todo.date;
-      });
-      
-      let dateDiv = document.getElementById(dateItem[0].index)
-        node = document.createElement("p");
-      node.innerText = todo.todo;
-      dateDiv.appendChild(node);
-      //clearDateArray()
-    }
-    function clearTodoText(){
-        document.querySelectorAll(".calender-item").forEach(item => {
-            console.log(item);
-            item.querySelectorAll("p").forEach(paragraph => {
-                console.log(paragraph);
-                item.removeChild(paragraph);
-            })
+    });
+
+    let dateDiv = document.getElementById(dateItem[0].index)
+    node = document.createElement("p");
+    node.innerText = todo.todo;
+    dateDiv.appendChild(node);
+
+}
+//rensar texten i calender-items divven
+function clearTodoText() {
+    document.querySelectorAll(".calender-item").forEach(item => {
+        console.log(item);
+        item.querySelectorAll("p").forEach(paragraph => {
+            console.log(paragraph);
+            item.removeChild(paragraph);
         })
-    
+    })
 
-  }
-   
-   
-   
-     
-  
-      
 
-    
-    
-   
-   
- 
- 
-    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 
-        
+
 
 
 // Function to append a new todo to the sidebar
