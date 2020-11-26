@@ -14,7 +14,7 @@ function addEventListeners() {
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
-let node
+
 
 
 
@@ -49,6 +49,7 @@ function printTodos() {
 
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
+    // renar todo-texten i calender-item divven
     clearTodoText()
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {
@@ -93,6 +94,7 @@ function printTodos() {
 
 
 }
+// skapar todo-texten i calender-item divven
 function addTodoToDate(todo) {
     let dateItem = dateArray.filter(item => {
         return item.dateString == todo.date;
