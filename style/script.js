@@ -33,7 +33,10 @@ let todosDate = [];
 let countTodos = [];
 
 
+/** Function to create an arrary of numbers of todos per day */
 function todoSum() {
+
+    clearTodoText()
 
     todosDate = [];
     countTodos = [];
@@ -69,8 +72,7 @@ function todoSum() {
 function pushTodoArray() {
 
     todoArray.push({ todo: userInputValue.value, date: todoDate.value })
-
-    todoSum()
+        
 
     console.log(todosDate)
     console.log(countTodos)
@@ -80,22 +82,26 @@ function pushTodoArray() {
 }
 
 /** This function prints the todos on screen, when removed from array it also removes from screen */
-function printTodos() {
+function printTodos() {   
 
 
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
+
+    // TODO: OLOF
     // renar todo-texten i calender-item divven
-    //clearTodoText()
+    clearTodoText()
     
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
     for (let i = 0; i < todoArray.length; i++) {       
-        
+        todoSum()
+        // TODO: NICKLAS
         for (let i = 0; i < countTodos.length; i++) {
             
             addTodoToDate(countTodos[i])
         }
 
+        // TODO: OLOF
         //addTodoToDate(todoArray[i])
 
         // Creates an varible to the array for use on the created paragraph
@@ -136,11 +142,13 @@ function printTodos() {
 
 
 }
+
+// TODO: NICKLAS
 // skapar todo-texten i calender-item divven
 
 function addTodoToDate(todo) {
 
-    clearTodoText()
+    //clearTodoText()
 
     let dateItem = dateArray.filter(item => {
         return item.dateString == todo.date;
@@ -149,12 +157,13 @@ function addTodoToDate(todo) {
     let dateDiv = document.getElementById(dateItem[0].index)
     node = document.createElement("p");
     node.innerText = todo.count;
-    dateDiv.appendChild(node);
-
-    
+    dateDiv.appendChild(node);   
 
 }
 
+
+
+// TODO: OLOF
 // skapar todo-texten i calender-item divven
 /*
 function addTodoToDate(todo) {
