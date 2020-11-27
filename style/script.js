@@ -6,8 +6,10 @@ function startProgram() {
     addEmptyDates()
 }
 function addEventListeners() {
-    //populateTodoArray()
-    //deleteTodoLS()   
+
+   // populateTodoArray()
+  //  deleteTodoLS()   
+
 
 };
 
@@ -181,8 +183,11 @@ function addTodoToDate(todo) {
 /*
 function addTodoToDate(todo) {
     let dateItem = dateArray.filter(item => {
+        
         return item.dateString == todo.date;
+      
     });
+   
 
     let dateDiv = document.getElementById(dateItem[0].index)
     node = document.createElement("p");
