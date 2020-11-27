@@ -6,6 +6,8 @@ function startProgram() {
     addEmptyDates()
 }
 function addEventListeners() {
+    populateTodoArray()
+    deleteTodoLS()   
 
 };
 
@@ -14,11 +16,6 @@ function addEventListeners() {
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
-
-
-
-
-
 
 // Eventlisteners
 createBtn.addEventListener('click', pushTodoArray);
@@ -33,28 +30,83 @@ createBtn.addEventListener('click', pushTodoArray);
  */
 let todoArray = [];
 
+let todosDate = [];
+
+let countTodos = [];
+
+
+/** Function to create an arrary of numbers of todos per day */
+function todoSum() {
+
+    clearTodoText()
+
+    todosDate = [];
+    countTodos = [];
+
+    for (let i = 0; i < todoArray.length; i++) {
+        todosDate.push(todoArray[i].date)
+    }
+
+    todosDate.sort();
+
+    let currentDay = null;
+    let count = 0;
+
+    for (let i = 0; i < todosDate.length; i++) {
+        if(todosDate[i] != currentDay) {
+            if (count > 0) {
+                countTodos.push({date:currentDay, count:count})
+            }
+            currentDay = todosDate[i];
+            count = 1;
+        }
+        else {
+            count++;
+        }
+    }
+    if (count > 0) {
+        countTodos.push({date:currentDay, count:count})
+    }
+    
+}
+
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
 
+
     todoArray.push({ todo: userInputValue.value, date: todoDate.value })
+        
+
+    console.log(todosDate)
+    console.log(countTodos)
+
 
     printTodos()
 
 }
 
 /** This function prints the todos on screen, when removed from array it also removes from screen */
-function printTodos() {
-
+function printTodos() {   
 
 
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
+
+    // TODO: OLOF
     // renar todo-texten i calender-item divven
     clearTodoText()
+    
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
-    for (let i = 0; i < todoArray.length; i++) {
+    for (let i = 0; i < todoArray.length; i++) {       
+        todoSum()
+        // TODO: NICKLAS
+        for (let i = 0; i < countTodos.length; i++) {
+            
+            addTodoToDate(countTodos[i])
+        }
 
-        addTodoToDate(todoArray[i])
+        // TODO: OLOF
+        //addTodoToDate(todoArray[i])
 
         // Creates an varible to the array for use on the created paragraph
         const todoData = todoArray[i];
@@ -65,7 +117,9 @@ function printTodos() {
         const todoContent = document.createElement('p');
 
         todoDeleteBtn.addEventListener('click', () => {
-            todoArray.splice(i, 1);
+
+            todoArray.splice(i,1);
+            deleteTodoLS(todoData)
 
             printTodos();
         })
@@ -80,7 +134,7 @@ function printTodos() {
         todoItem.appendChild(todoContent)
 
         // Creates the button
-        todoDeleteBtn.innerText = 'X';
+        todoDeleteBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
         todoItem.appendChild(todoDeleteBtn)
         todoDeleteBtn.classList.add('delete-btn');
 
@@ -94,7 +148,30 @@ function printTodos() {
 
 
 }
+
+// TODO: NICKLAS
 // skapar todo-texten i calender-item divven
+
+function addTodoToDate(todo) {
+
+    //clearTodoText()
+
+    let dateItem = dateArray.filter(item => {
+        return item.dateString == todo.date;
+    });
+
+    let dateDiv = document.getElementById(dateItem[0].index)
+    node = document.createElement("p");
+    node.innerText = todo.count;
+    dateDiv.appendChild(node);   
+
+}
+
+
+
+// TODO: OLOF
+// skapar todo-texten i calender-item divven
+/*
 function addTodoToDate(todo) {
     let dateItem = dateArray.filter(item => {
         
@@ -109,18 +186,18 @@ function addTodoToDate(todo) {
     dateDiv.appendChild(node);
 
 }
+*/
+
 //rensar texten i calender-items divven
 function clearTodoText() {
     document.querySelectorAll(".calender-item").forEach(item => {
-        console.log(item);
         item.querySelectorAll("p").forEach(paragraph => {
-            console.log(paragraph);
             item.removeChild(paragraph);
         })
     })
-
-
 }
+
+// Save to local storage
 
 
 
@@ -141,24 +218,38 @@ function clearTodoText() {
 
 // Function to append a new todo to the sidebar
 // function addTodo() {
+=======
+function saveTodoToLS() {
 
-//     // Create the container of the todo
-//     const todoItem = document.createElement('div');
-//     todoItem.classList.add('todo-item');
 
-//     const todoContent = document.createElement('p');
-//     todoContent.classList.add('item-text');
-//     todoContent.innerText = userInputValue.value;
-//     todoItem.appendChild(todoContent)
+    let todoToString = JSON.stringify(todoArray)
+    // console.log(todoToString)
 
-//     const todoDeleteBtn = document.createElement('button');
-//     todoDeleteBtn.innerText = 'X';
-//     todoDeleteBtn.classList.add('delete-btn');
-//     todoItem.appendChild(todoDeleteBtn)
+    localStorage.setItem('todo', todoToString)         
+}
 
-//     todoContainer.appendChild(todoItem);
+function populateTodoArray() {
 
-//     userInputValue.value = "";
+    if (localStorage.getItem('todo') === null) {
 
-//     console.log(userInputValue.value)
-// }
+    }
+    else {
+    let todoBack = JSON.parse(localStorage.getItem('todo'))
+    todoArray = todoBack;
+    console.log(todoBack)
+
+    printTodos();
+    }
+}
+
+/** Function to remove one todo from local storage and populate it with the rest of todoArray */
+function deleteTodoLS() {
+
+    // Clean the local storage
+    localStorage.clear();
+
+    // A loop to send every todo from the todoArray to local storage
+    for ( i = 0; i < todoArray.length; i++) {
+        saveTodoToLS()
+    }
+}
