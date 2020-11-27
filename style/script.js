@@ -6,8 +6,8 @@ function startProgram() {
     addEmptyDates()
 }
 function addEventListeners() {
-    populateTodoArray()
-    deleteTodoLS()   
+    //populateTodoArray()
+    //deleteTodoLS()   
 
 };
 
@@ -119,7 +119,7 @@ function printTodos() {
         todoDeleteBtn.addEventListener('click', () => {
 
             todoArray.splice(i,1);
-            deleteTodoLS(todoData)
+            //deleteTodoLS(todoData)
 
             printTodos();
         })
@@ -215,7 +215,7 @@ function clearTodoText() {
 
 // Function to append a new todo to the sidebar
 // function addTodo() {
-=======
+/*
 function saveTodoToLS() {
 
 
@@ -238,8 +238,9 @@ function populateTodoArray() {
     printTodos();
     }
 }
-
+*/
 /** Function to remove one todo from local storage and populate it with the rest of todoArray */
+/*
 function deleteTodoLS() {
 
     // Clean the local storage
@@ -250,3 +251,4 @@ function deleteTodoLS() {
         saveTodoToLS()
     }
 }
+*/
