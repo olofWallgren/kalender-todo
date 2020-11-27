@@ -6,8 +6,8 @@ function startProgram() {
     addEmptyDates()
 }
 function addEventListeners() {
-    populateTodoArray()
-    deleteTodoLS()   
+   // populateTodoArray()
+  //  deleteTodoLS()   
 
 };
 
