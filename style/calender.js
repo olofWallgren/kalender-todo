@@ -8,12 +8,17 @@ function startProgram(){
 function createArray(){
     for (let i = 1; i <= 30; i++){
         let currentDate = new Date (`2020-11-${i}`);
-        let item = { "index": i, "date": currentDate, }
+        let item = { "index": i, "date": currentDate,"dateString":currentDate.toISOString().slice(0,10)}
+       
         dateArray[i] = item
         addDateToDiv(item)
-       
+       // compareTodo(item)
+        
     }
 }
+
+ 
+//  }
     // skapar en tagg i html med datumet i
 function addDateToDiv(item){
     let dateDiv = document.getElementById(item.index);
@@ -34,6 +39,7 @@ function addEmptyDates() {
         emptyDate.classList.add("calender-item")
         datesDiv.insertAdjacentElement('afterbegin', emptyDate)
     }
+    
 }
 
 
