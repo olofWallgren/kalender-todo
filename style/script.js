@@ -6,6 +6,8 @@ function startProgram() {
     addEmptyDates()
 }
 function addEventListeners() {
+    populateTodoArray()
+    deleteTodoLS()   
 
 };
 
@@ -71,11 +73,13 @@ function todoSum() {
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
 
+
     todoArray.push({ todo: userInputValue.value, date: todoDate.value })
         
 
     console.log(todosDate)
     console.log(countTodos)
+
 
     printTodos()
 
@@ -113,7 +117,9 @@ function printTodos() {
         const todoContent = document.createElement('p');
 
         todoDeleteBtn.addEventListener('click', () => {
-            todoArray.splice(i, 1);
+
+            todoArray.splice(i,1);
+            deleteTodoLS(todoData)
 
             printTodos();
         })
@@ -128,7 +134,7 @@ function printTodos() {
         todoItem.appendChild(todoContent)
 
         // Creates the button
-        todoDeleteBtn.innerText = 'X';
+        todoDeleteBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
         todoItem.appendChild(todoDeleteBtn)
         todoDeleteBtn.classList.add('delete-btn');
 
@@ -188,6 +194,8 @@ function clearTodoText() {
     })
 }
 
+// Save to local storage
+
 
 
 
@@ -207,24 +215,38 @@ function clearTodoText() {
 
 // Function to append a new todo to the sidebar
 // function addTodo() {
+=======
+function saveTodoToLS() {
 
-//     // Create the container of the todo
-//     const todoItem = document.createElement('div');
-//     todoItem.classList.add('todo-item');
 
-//     const todoContent = document.createElement('p');
-//     todoContent.classList.add('item-text');
-//     todoContent.innerText = userInputValue.value;
-//     todoItem.appendChild(todoContent)
+    let todoToString = JSON.stringify(todoArray)
+    // console.log(todoToString)
 
-//     const todoDeleteBtn = document.createElement('button');
-//     todoDeleteBtn.innerText = 'X';
-//     todoDeleteBtn.classList.add('delete-btn');
-//     todoItem.appendChild(todoDeleteBtn)
+    localStorage.setItem('todo', todoToString)         
+}
 
-//     todoContainer.appendChild(todoItem);
+function populateTodoArray() {
 
-//     userInputValue.value = "";
+    if (localStorage.getItem('todo') === null) {
 
-//     console.log(userInputValue.value)
-// }
+    }
+    else {
+    let todoBack = JSON.parse(localStorage.getItem('todo'))
+    todoArray = todoBack;
+    console.log(todoBack)
+
+    printTodos();
+    }
+}
+
+/** Function to remove one todo from local storage and populate it with the rest of todoArray */
+function deleteTodoLS() {
+
+    // Clean the local storage
+    localStorage.clear();
+
+    // A loop to send every todo from the todoArray to local storage
+    for ( i = 0; i < todoArray.length; i++) {
+        saveTodoToLS()
+    }
+}

@@ -18,14 +18,14 @@
 
     <script defer src="./style/script.js"></script>
 
-    <title>Todo kalender</title>
+    <title>To-Do Kalender</title>
 </head>
 
 <body class="width height">
 
     <header class="center width">
         <!-- Titel på kalendern -->
-        <h1 class="flex center height">Todo Kalender</h1>
+        <h1 class="flex center height">To-Do Kalender</h1>
     </header>
 
     <main class="flex row height">
@@ -49,6 +49,7 @@
                 <input type="text" id="todoInput" placeholder="Fyll i här">
 
                 <!-- Select för att bestämma vilket datum man ska göra todon -->
+                <span class="choose-date-text">Välj Datum:</span>
                 <input type="date" name="todoDate" id="todoDate">             
 
                 <!-- Knappen ska kopplas till en eventlistener
@@ -74,47 +75,47 @@
         <!-- Kalender sektionen -->
         <div class="calender-section width height">
             <div class="calender-weedays grid grid-calender width">
-                <div class="weekday flex">Måndag</div>
-                <div class="weekday flex">Tisdag</div>
-                <div class="weekday flex">Onsdag</div>
-                <div class="weekday flex">Torsdag</div>
-                <div class="weekday flex">Fredag</div>
-                <div class="weekday flex">Lördag</div>
-                <div class="weekday flex">Söndag</div>
+                <div class="weekday flex"><span>Måndag</span></div>
+                <div class="weekday flex"><span>Tisdag</span></div>
+                <div class="weekday flex"><span>Onsdag</span></div>
+                <div class="weekday flex"><span>Torsdag</span></div>
+                <div class="weekday flex"><span>Fredag</span></div>
+                <div class="weekday flex"><span>Lördag</span></div>
+                <div class="weekday flex"><span>Söndag</span></div>
             </div>
             <div class="calender-container grid grid-calender width height" id="dates">
                 <!-- Här kommer vi automatiskt skicka in datum från vår månads Array -->
                 <!-- Så de ska bort senare -->         
                 
-                <div class="calender-item" id="1"><span class="red-day">1</span></div>
+                <div class="calender-item" id="1"><span>1</span></div>
                 <div class="calender-item" id="2"><span>2</span></div>
                 <div class="calender-item" id="3"><span>3</span></div>
                 <div class="calender-item" id="4"><span>4</span></div>
                 <div class="calender-item" id="5"><span>5</span></div>
                 <div class="calender-item" id="6"><span>6</span></div>
                 <div class="calender-item" id="7"><span>7</span></div>
-                <div class="calender-item" id="8"><span class="red-day">8</span></div>
+                <div class="calender-item" id="8"><span>8</span></div>
                 <div class="calender-item" id="9"><span>9</span></div>
                 <div class="calender-item" id="10"><span>10</span></div>
                 <div class="calender-item" id="11"><span>11</span></div>
                 <div class="calender-item" id="12"><span>12</span></div>
                 <div class="calender-item" id="13"><span>13</span></div>
                 <div class="calender-item" id="14"><span>14</span></div>
-                <div class="calender-item" id="15"><span class="red-day">15</span></div>
+                <div class="calender-item" id="15"><span>15</span></div>
                 <div class="calender-item" id="16"><span>16</span></div>
                 <div class="calender-item" id="17"><span>17</span></div>
                 <div class="calender-item" id="18"><span>18</span></div>
                 <div class="calender-item" id="19"><span>19</span></div>
                 <div class="calender-item" id="20"><span>20</span></div>
                 <div class="calender-item" id="21"><span>21</span></div>
-                <div class="calender-item" id="22"><span class="red-day">22</span></div>
+                <div class="calender-item" id="22"><span>22</span></div>
                 <div class="calender-item" id="23"><span>23</span></div>
                 <div class="calender-item" id="24"><span>24</span></div>
                 <div class="calender-item" id="25"><span>25</span></div>
                 <div class="calender-item" id="26"><span>26</span></div>
                 <div class="calender-item" id="27"><span>27</span></div>
                 <div class="calender-item" id="28"><span>28</span></div>
-                <div class="calender-item" id="29"><span class="red-day">29</span></div>
+                <div class="calender-item" id="29"><span>29</span></div>
                 <div class="calender-item" id="30"><span>30</span></div>
             </div>
         </div>
