@@ -108,6 +108,8 @@ aside h4 {
     font-weight: 600;
 }
 
+
+
 /* Todo item */
 /* De här 3 klasserna ska lägga till när vi appendar våra todos */
 
@@ -246,4 +248,14 @@ aside h4 {
     align-items: center;
     justify-content: center;
     height: 2.5rem;
+}
+
+.alert-message {
+    font-size: .9rem;
+    color: var(--clr-bg);
+    margin-top: .25rem;
+}
+
+.red-border {
+    border: 2px solid var(--clr-bg);
 }

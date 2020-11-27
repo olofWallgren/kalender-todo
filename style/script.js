@@ -16,6 +16,7 @@ function addEventListeners() {
 const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
+const alertText = document.querySelector('.alert-message');
 
 // Eventlisteners
 createBtn.addEventListener('click', pushTodoArray);
@@ -73,15 +74,21 @@ function todoSum() {
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
 
-
-    todoArray.push({ todo: userInputValue.value, date: todoDate.value })
+    if (userInputValue.value === '') {
+        userInputValue.style.border = '2px solid var(--clr-bg)';
+        alertText.innerText = 'Fyll i ett värde:';
+    } else {
+        userInputValue.style.border = '2px solid black';
+        alertText.innerText = '';
+        todoArray.push({ todo: userInputValue.value, date: todoDate.value })
         
+        console.log(todosDate)
+        console.log(countTodos)
 
-    console.log(todosDate)
-    console.log(countTodos)
+        printTodos()
+    }
 
-
-    printTodos()
+    
 
 }
 
