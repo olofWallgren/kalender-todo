@@ -15,11 +15,6 @@ const createBtn = document.querySelector('#createBtn');
 const userInputValue = document.querySelector('#todoInput');
 const todoDate = document.querySelector('#todoDate');
 
-
-
-
-
-
 // Eventlisteners
 createBtn.addEventListener('click', pushTodoArray);
 
@@ -33,10 +28,52 @@ createBtn.addEventListener('click', pushTodoArray);
  */
 let todoArray = [];
 
+let todosDate = [];
+
+let countTodos = [];
+
+
+function todoSum() {
+
+    todosDate = [];
+    countTodos = [];
+
+    for (let i = 0; i < todoArray.length; i++) {
+        todosDate.push(todoArray[i].date)
+    }
+
+    todosDate.sort();
+
+    let currentDay = null;
+    let count = 0;
+
+    for (let i = 0; i < todosDate.length; i++) {
+        if(todosDate[i] != currentDay) {
+            if (count > 0) {
+                countTodos.push({date:currentDay, count:count})
+            }
+            currentDay = todosDate[i];
+            count = 1;
+        }
+        else {
+            count++;
+        }
+    }
+    if (count > 0) {
+        countTodos.push({date:currentDay, count:count})
+    }
+    
+}
+
 /** This function pushes the user input to the todo array */
 function pushTodoArray() {
 
     todoArray.push({ todo: userInputValue.value, date: todoDate.value })
+
+    todoSum()
+
+    console.log(todosDate)
+    console.log(countTodos)
 
     printTodos()
 
@@ -46,15 +83,20 @@ function pushTodoArray() {
 function printTodos() {
 
 
-
     // Cleares the todoList div of todos that are ereased from todo array
     todoList.innerHTML = "";
     // renar todo-texten i calender-item divven
-    clearTodoText()
+    //clearTodoText()
+    
     // A loop to print out the todo, and paragraph with the todo and one button to erease the todo from array
-    for (let i = 0; i < todoArray.length; i++) {
+    for (let i = 0; i < todoArray.length; i++) {       
+        
+        for (let i = 0; i < countTodos.length; i++) {
+            
+            addTodoToDate(countTodos[i])
+        }
 
-        addTodoToDate(todoArray[i])
+        //addTodoToDate(todoArray[i])
 
         // Creates an varible to the array for use on the created paragraph
         const todoData = todoArray[i];
@@ -95,6 +137,26 @@ function printTodos() {
 
 }
 // skapar todo-texten i calender-item divven
+
+function addTodoToDate(todo) {
+
+    clearTodoText()
+
+    let dateItem = dateArray.filter(item => {
+        return item.dateString == todo.date;
+    });
+
+    let dateDiv = document.getElementById(dateItem[0].index)
+    node = document.createElement("p");
+    node.innerText = todo.count;
+    dateDiv.appendChild(node);
+
+    
+
+}
+
+// skapar todo-texten i calender-item divven
+/*
 function addTodoToDate(todo) {
     let dateItem = dateArray.filter(item => {
         return item.dateString == todo.date;
@@ -106,17 +168,15 @@ function addTodoToDate(todo) {
     dateDiv.appendChild(node);
 
 }
+*/
+
 //rensar texten i calender-items divven
 function clearTodoText() {
     document.querySelectorAll(".calender-item").forEach(item => {
-        console.log(item);
         item.querySelectorAll("p").forEach(paragraph => {
-            console.log(paragraph);
             item.removeChild(paragraph);
         })
     })
-
-
 }
 
 
