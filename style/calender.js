@@ -7,7 +7,7 @@ function startProgram(){
    // skapar en array fr varje datum i november
 function createArray(){
     for (let i = 1; i <= 30; i++){
-        let currentDate = new Date (`2020-11-${i}`);
+        let currentDate = new Date (`2020-11-${i} 15:00`);
         let item = { "index": i, "date": currentDate,"dateString":currentDate.toISOString().slice(0,10)}
        
         dateArray[i] = item
@@ -42,6 +42,10 @@ function addEmptyDates() {
     
 }
 
+function changeCalenderDate(){
+    for(let month = 1; month <= 12; i++ ){
 
+    }
+}
 
 

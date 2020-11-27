@@ -97,8 +97,11 @@ function printTodos() {
 // skapar todo-texten i calender-item divven
 function addTodoToDate(todo) {
     let dateItem = dateArray.filter(item => {
+        
         return item.dateString == todo.date;
+      
     });
+   
 
     let dateDiv = document.getElementById(dateItem[0].index)
     node = document.createElement("p");
