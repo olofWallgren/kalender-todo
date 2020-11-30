@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 function startTime() {
     const date = new Date();
     
@@ -16,6 +19,10 @@ function startTime() {
     monthHolder.innerText = getDate(date) + ' ' + date.getFullYear();
 }
 
+/**
+ * 
+ * @param {*} i 
+ */
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i
@@ -23,6 +30,10 @@ function checkTime(i) {
     return i;
 }
 
+/**
+ * 
+ * @param {*} date 
+ */
 function getWeekday(date) {
     const weekdayIndex =  date.getDay();
 
@@ -37,6 +48,10 @@ function getWeekday(date) {
     }
 }
 
+/**
+ * 
+ * @param {*} date 
+ */
 function getDate(date) {
     const dayOfMonth = date.getDate();
     const monthIndex = date.getMonth();

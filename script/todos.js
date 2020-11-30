@@ -4,8 +4,14 @@
  */
 let todoArray = [];
 
+/**
+ * Array to get all the dates from the todo array
+ */
 let todosDate = [];
 
+/**
+ * Array to create at list of dates and counts of that day
+ */
 let countTodos = [];
 
 
@@ -124,8 +130,6 @@ function printTodos() {
         userInputValue.value = "";
 
     }
-
-
 }
 /**
  * filter the dateArray item and compare dates with todo.dates.
