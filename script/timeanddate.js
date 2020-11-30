@@ -1,5 +1,5 @@
 /**
- * 
+ * get time day and mounth and displays it in a HTML-element
  */
 function startTime() {
     const date = new Date();
@@ -20,8 +20,8 @@ function startTime() {
 }
 
 /**
- * 
- * @param {*} i 
+ * sets a "0" if the number is < 10
+ * @param {*Number} i 
  */
 function checkTime(i) {
     if (i < 10) {
@@ -31,8 +31,8 @@ function checkTime(i) {
 }
 
 /**
- * 
- * @param {*} date 
+ * converts the number of days into a string 
+ * @param {* Date} date 
  */
 function getWeekday(date) {
     const weekdayIndex =  date.getDay();
@@ -49,8 +49,8 @@ function getWeekday(date) {
 }
 
 /**
- * 
- * @param {*} date 
+ * converts the mounth-number into a  mounth-string
+ * @param {*Date} date 
  */
 function getDate(date) {
     const dayOfMonth = date.getDate();
