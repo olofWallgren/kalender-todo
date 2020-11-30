@@ -1,8 +1,5 @@
 
 let dateArray = [];
-function startProgram(){
-    
-}
    
    // skapar en array fr varje datum i november
 function createArray(){
@@ -11,14 +8,10 @@ function createArray(){
         let item = { "index": i, "date": currentDate,"dateString":currentDate.toISOString().slice(0,10)}
        
         dateArray[i] = item
-        addDateToDiv(item)
-       // compareTodo(item)
-        
+        addDateToDiv(item)        
     }
 }
 
- 
-//  }
     // skapar en tagg i html med datumet i
 function addDateToDiv(item){
     let dateDiv = document.getElementById(item.index);
