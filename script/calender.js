@@ -14,10 +14,10 @@ function createArray(){
     }
 }
 
-/**
- * Creates an <h3> tag in the HTML-document and including the date
- * @param {HTMLBodyElement} item 
- */
+ /**
+    * creates h3-tag in calender div with the current dates
+    * @param {[number,Date,string]} item 
+    */
 function addDateToDiv(item){
     let dateDiv = document.getElementById(item.index);
     dateDiv.innerHTML = `<h3>${item.date.getDate()}</h3>`
@@ -25,7 +25,7 @@ function addDateToDiv(item){
 }
 
 /**
- * Creates empty spaces/squares in the calendar if the current month doesn't start on a Monday
+ * creates empty calender-div before the current date divv´s based on the current day number 
  */
 function addEmptyDates() {
     let datesDiv = document.getElementById("dates")
