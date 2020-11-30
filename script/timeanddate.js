@@ -51,6 +51,7 @@ function getWeekday(date) {
 /**
  * converts the mounth-number into a  mounth-string
  * @param {*Date} date 
+ * @returns{string}
  */
 function getDate(date) {
     const dayOfMonth = date.getDate();
