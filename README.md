@@ -14,3 +14,7 @@ Vi har inte gjort någon av punkterna för VG!
 
 Local storage var en punkt vi började med och fungerade utan kalenderkopplingen.
 När vi kopplade in den, strulade det med den funktionen som vi inte fick uträtt.
+
+## Länk till sidan
+
+[Länk](https://olofwallgren.github.io/kalender-todo/)
