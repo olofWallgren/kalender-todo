@@ -15,6 +15,8 @@ body {
     background: var(--clr-bg);
 }
 
+/* Återanvändbara klasser ===================================== */
+
 .width {
     width: 100%;
 }
@@ -23,7 +25,8 @@ body {
     height: 100%;
 }
 
-/* Flex inställningar */
+/* Flex inställningar =========================================== */
+
 .flex {
     display: flex;
 }
@@ -41,7 +44,7 @@ body {
     flex-direction: row;
 }
 
-/* Grid inställningar */
+/* Grid inställningar ==========================================*/
 
 .grid {
     display: grid;
@@ -51,7 +54,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
 }
 
-/* Andra standarder */
+/* Andra standarder ==============================================*/
 
 h1 {
     text-align: center;
@@ -62,13 +65,13 @@ h1 {
 
 /* Header */
 
-/* Main */
+/* Main =========================================================== */
 
 main {
     margin-bottom: .5rem;
 }
 
-/* Sidebar */
+/* Sidebar med todos =========================================================*/
 
 aside {
     width: 20rem;
@@ -97,7 +100,8 @@ aside h4 {
     font-weight: 600;
 }
 
-/* Containern för en todo */
+/* Containern för en todo ================================= */
+
 .todo-item {
     display: flex;
     flex-direction: row;   
@@ -184,7 +188,7 @@ aside h4 {
 }
 
 
-/* Calender */
+/* Kalender =========================================== */
 
 .calender-section {
     border-radius: 8px;   
@@ -206,7 +210,6 @@ aside h4 {
 }
 
 .calender-item span {
-    /* background-color: var(--clr-bg); */
     padding: 0.25rem 0.75rem;
     border-radius: 100rem;
     color: black;
@@ -221,10 +224,6 @@ aside h4 {
 
 .calender-item .null {
     color: rgb(175, 175, 175);
-}
-
-.calender-item .red-day {
-    color: var(--clr-bg);
 }
 
 .weekday {
