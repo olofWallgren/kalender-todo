@@ -127,7 +127,11 @@ function printTodos() {
 
 
 }
-
+/**
+ * filter the dateArray item and compare dates with todo.dates.
+ * creates p-tag and insert the number of todo´s 
+ * @param {[string,Date]} todo 
+ */
 function addTodoToDate(todo) {
 
     //clearTodoText()
@@ -143,7 +147,9 @@ function addTodoToDate(todo) {
 
 }
 
-//rensar texten i calender-items divven
+/** 
+ * loops throgh calender-item divv´s and remove the paragraph-element
+ */
 function clearTodoText() {
     document.querySelectorAll(".calender-item").forEach(item => {
         item.querySelectorAll("p").forEach(paragraph => {
