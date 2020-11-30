@@ -15,7 +15,7 @@ body {
     background: var(--clr-bg);
 }
 
-/* Återanvändbara klasser ===================================== */
+/* RE-USABLE CLASSES ===================================== */
 
 .width {
     width: 100%;
@@ -25,7 +25,7 @@ body {
     height: 100%;
 }
 
-/* Flex inställningar =========================================== */
+/* ===================== FLEX CLASSES ====================== */
 
 .flex {
     display: flex;
@@ -44,7 +44,7 @@ body {
     flex-direction: row;
 }
 
-/* Grid inställningar ==========================================*/
+/* ===================== GRID CLASSES ====================== */
 
 .grid {
     display: grid;
@@ -54,7 +54,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
 }
 
-/* Andra standarder ==============================================*/
+/* HEADER / TITLE ============================================== */
 
 h1 {
     text-align: center;
@@ -63,15 +63,13 @@ h1 {
     color: white;
 }
 
-/* Header */
-
-/* Main =========================================================== */
+/* MAIN =========================================================== */
 
 main {
     margin-bottom: .5rem;
 }
 
-/* Sidebar med todos =========================================================*/
+/* SIDEBARS WITH TO-DO'S =========================================================*/
 
 aside {
     width: 20rem;
@@ -100,7 +98,7 @@ aside h4 {
     font-weight: 600;
 }
 
-/* Containern för en todo ================================= */
+/* TO-DO CONTAINER =========================================== */
 
 .todo-item {
     display: flex;
@@ -109,12 +107,14 @@ aside h4 {
     border: .5px lightgrey solid;
 }
 
-/* Todo text containern */
+/* ======== TO-DO-TEXT CONTAINER ========== */
+
 .item-text {
     flex: 5;
 }
 
-/* Todo btn containern */
+/* ========== TO-DO-BUTTON CONTAINER ========= */
+
 .delete-btn {
     flex: 1;
 }
@@ -184,6 +184,8 @@ aside h4 {
     overflow: hidden;
 }
 
+/* ================== TO-DO-DELETE BUTTON ================= */
+
 .delete-btn {
     border: none;
     background-color: var(--clr-bg);
@@ -200,7 +202,7 @@ aside h4 {
 }
 
 
-/* Kalender =========================================== */
+/* ================== CALENDAR ================= */
 
 .calender-section {
     border-radius: 8px;   
@@ -245,6 +247,9 @@ aside h4 {
     justify-content: center;
     height: 2.5rem;
 }
+
+/* ================== EMPTY INPUT MESSAGE & STYLES ================= */
+
 
 .alert-message {
     font-size: .9rem;
