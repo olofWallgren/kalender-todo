@@ -160,8 +160,20 @@ aside h4 {
     font-size: .9rem;
 }
 
+.item-cont-div {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-date {
+    padding: .3rem 0 0 .3rem;
+    font-size: .7rem;
+    color: grey;
+}
+
 .item-text {
-    padding: .2rem .2rem;
+    padding: .2rem .3rem;
 }
 
 .todo-item {
