@@ -83,6 +83,7 @@ function printTodos() {
 
         const todoDeleteBtn = document.createElement('button');
         const todoContent = document.createElement('p');
+        const todoDate = document.createElement('span');
 
         todoDeleteBtn.addEventListener('click', () => {
 
@@ -95,11 +96,21 @@ function printTodos() {
         // Creates the container of the todo
         const todoItem = document.createElement('div');
         todoItem.classList.add('todo-item');
+        
+        const todoContDiv = document.createElement('div');
+        todoContDiv.classList.add('item-cont-div');
+        todoItem.appendChild(todoContDiv)
+        
+        // Creates the paragraph for todo content
+        todoDate.innerText = todoData.date;
+        todoDate.classList.add('item-date');
+        todoContDiv.appendChild(todoDate)
 
-        // Creates the paragraph
+        // Creates the paragraph for todo content
         todoContent.innerText = todoData.todo;
         todoContent.classList.add('item-text');
-        todoItem.appendChild(todoContent)
+        todoContDiv.appendChild(todoContent)
+
 
         // Creates the button
         todoDeleteBtn.innerHTML = '<i class="fas fa-times-circle"></i>';
