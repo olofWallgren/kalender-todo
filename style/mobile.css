@@ -1,6 +1,6 @@
 @media (max-width: 35em) {
 
-/* Göm kalender vid mobil */
+/* ================== HIDES CALENDAR ON MOBILE/SMALL DEVICES ================= */
 
     .calender-section {
         display: none;
@@ -15,6 +15,9 @@
     }
 
 }
+
+/* ================== ALTERS THE FONT-SIZE OF THE WEEKDAYS ================= */
+
 
 @media (max-width: 680px) {
     .weekday span {
