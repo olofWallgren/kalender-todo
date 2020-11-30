@@ -1,4 +1,4 @@
-
+/** Array for dates */
 let dateArray = [];
 
 /**

@@ -1,4 +1,7 @@
+/** Load the program */
 window.addEventListener('load', startProgram);
+
+/** Function of sets of functions that starts at load */
 function startProgram() {
     startTime()
     createArray()
