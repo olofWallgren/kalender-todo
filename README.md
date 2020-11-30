@@ -11,3 +11,6 @@ Skapat och designat kalendervy med en månadsvy över aktuell månad (November).
 Skapade todos kopplas till kalendern och visas med en siffra som representerar antal todos på den dagen.
 
 Vi har inte gjort någon av punkterna för VG!
+
+Local storage var en punkt vi började med och fungerade utan kalenderkopplingen.
+När vi kopplade in den, strulade det med den funktionen som vi inte fick uträtt.
