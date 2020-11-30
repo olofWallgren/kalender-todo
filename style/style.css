@@ -15,8 +15,6 @@ body {
     background: var(--clr-bg);
 }
 
-
-
 .width {
     width: 100%;
 }
@@ -24,8 +22,6 @@ body {
 .height {
     height: 100%;
 }
-
-
 
 /* Flex inställningar */
 .flex {
@@ -45,8 +41,6 @@ body {
     flex-direction: row;
 }
 
-
-
 /* Grid inställningar */
 
 .grid {
@@ -57,22 +51,16 @@ body {
     grid-template-columns: repeat(7, 1fr);
 }
 
-
-
 /* Andra standarder */
 
 h1 {
     text-align: center;
+    padding: 1.5rem 0;
     margin: 0;
     color: white;
 }
 
 /* Header */
-
-header {
-    height: 5rem;
-}
-
 
 /* Main */
 
@@ -83,6 +71,7 @@ main {
 /* Sidebar */
 
 aside {
+    width: 20rem;
     margin: 0 .5rem;
     padding: 0.5rem .5rem;
     background-color: var(--clr-aside);
@@ -108,11 +97,6 @@ aside h4 {
     font-weight: 600;
 }
 
-
-
-/* Todo item */
-/* De här 3 klasserna ska lägga till när vi appendar våra todos */
-
 /* Containern för en todo */
 .todo-item {
     display: flex;
@@ -130,12 +114,6 @@ aside h4 {
 .delete-btn {
     flex: 1;
 }
-
-/* .todo-btn, #todoInput, aside h4, .aside-header {
-    margin-left: .6rem;
-} */
-
-
 
 .todo-btn {
     margin-top: 0.5rem;
@@ -209,14 +187,17 @@ aside h4 {
 /* Calender */
 
 .calender-section {
-    border-radius: 8px;
+    border-radius: 8px;   
+    
     overflow: hidden;
     margin-right: .5rem;
 }
 
 .calender-item {
+    position: relative;
     width: 100%;
     height: 100%;
+    min-height: 8rem;
 
     border: 1px rgb(230, 230, 230) solid;
     padding: .5rem;
@@ -232,6 +213,10 @@ aside h4 {
     float: right;
     font-weight: 700;
     font-size: 1.2rem;
+}
+
+.calender-item > p {
+    position: absolute;
 }
 
 .calender-item .null {
