@@ -1,7 +1,9 @@
 
 let dateArray = [];
-   
-   // skapar en array fr varje datum i november
+
+/**
+ * Creates an array for every date in November
+ */
 function createArray(){
     for (let i = 1; i <= 30; i++){
         let currentDate = new Date (`2020-11-${i} 15:00`);
@@ -12,13 +14,19 @@ function createArray(){
     }
 }
 
-    // skapar en tagg i html med datumet i
+/**
+ * Creates an <h3> tag in the HTML-document and including the date
+ * @param {HTMLBodyElement} item 
+ */
 function addDateToDiv(item){
     let dateDiv = document.getElementById(item.index);
     dateDiv.innerHTML = `<h3>${item.date.getDate()}</h3>`
 
 }
-// skapr tomma rutor om tex månaden brjar på en söndag
+
+/**
+ * Creates empty spaces/squares in the calendar if the current month doesn't start on a Monday
+ */
 function addEmptyDates() {
     let datesDiv = document.getElementById("dates")
     let currentDay = new Date("2020-11-01").getDay();
@@ -34,11 +42,4 @@ function addEmptyDates() {
     }
     
 }
-
-function changeCalenderDate(){
-    for(let month = 1; month <= 12; i++ ){
-
-    }
-}
-
 
